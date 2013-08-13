@@ -1,0 +1,8 @@
+NAME kTaskMgr
+
+DESCRIPTION "kTaskMgr - (c) copyright 2000 knut st. osmundsen - Dedicated to my beloved Grace!"
+
+IMPORTS
+    DosQuerySysState    = DOSCALLS.368
+    DosFlatToSel        = DOSCALLS.425
+    DosSelToFlat        = DOSCALLS.426

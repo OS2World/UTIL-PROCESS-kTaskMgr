@@ -1,0 +1,309 @@
+/* $Id: kTaskMgr.dlg,v 1.7 2000/05/22 02:35:49 stknut Exp $
+ *
+ * Dialog resource file.
+ *
+ * Copyright (c) 2000 knut st. osmundsen
+ *
+ */
+
+
+/*******************************************************************************
+*   Header Files                                                               *
+*******************************************************************************/
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+DLGINCLUDE 1 "kTaskMgr_defs.h"
+
+DLGTEMPLATE DL_KTASKMGR
+BEGIN
+    DIALOG  TITLE, DL_KTASKMGR, 0, 0, 250,182, 0,
+                FCF_TITLEBAR
+                | FCF_SYSMENU
+                | FCF_TASKLIST
+                | FCF_MINMAX
+                | FCF_NOMOVEWITHOWNER
+                | FCF_SIZEBORDER
+                | FCF_DLGBORDER
+                | FCF_SHELLPOSITION
+    BEGIN
+        NOTEBOOK        KTM_NTBK, 0, 0, 250, 182, WS_VISIBLE | WS_TABSTOP |
+                        BKS_BACKPAGESTR | BKS_ROUNDEDTABS |
+                        BKS_TABTEXTCENTER | BKS_SPIRALBIND |
+                        BKS_TABBEDDIALOG
+        PRESPARAMS PP_FONTNAMESIZE,"8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KCONTAINERPAGE
+BEGIN
+    DIALOG  "tab", DL_KCONTAINERPAGE, 0, 0, 339, 139, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CONTAINER       KCNRPG_CNR, 4, 4, 331, 131, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KPROCESSPAGE
+BEGIN
+    DIALOG  "~Processes", DL_KPROCESSPAGE, 0, 0, 339, 139, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CONTAINER       KPROCPG_CNR, 4, 4, 331, 131, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KMODULEPAGE
+BEGIN
+    DIALOG  "~Modules", DL_KMODULEPAGE, 0, 0, 339, 139, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CONTAINER       KMODPG_CNR, 4, 4, 331, 131, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KSFNPAGE
+BEGIN
+    DIALOG  "~SFNs", DL_KSFNPAGE, 0, 0, 339, 139, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CONTAINER       KSFNPG_CNR, 4, 4, 331, 131, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KQUEUEPAGE
+BEGIN
+    DIALOG  "~Queues", DL_KQUEUEPAGE, 0, 0, 339, 139, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CONTAINER       KQUEPG_CNR, 4, 4, 331, 131, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KQUEUEOPENPAGE
+BEGIN
+    DIALOG  "~Open Queues", DL_KQUEUEOPENPAGE, 0, 0, 339, 139, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CONTAINER       KQUEOPG_CNR, 4, 4, 331, 131, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+
+
+DLGTEMPLATE DL_KABOUTPAGE
+BEGIN
+    DIALOG  "~About", DL_KABOUTPAGE, 118, 62, 199, 117, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        CTEXT           TITLE, -1, 0, 90, 199, 14, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "16.Helv"
+        CTEXT           "by knut st. osmundsen", -1, 0, 79, 199, 12,
+                        DT_VCENTER
+        CTEXT           "Copyright (c) 2000 knut st. osmundsen.
+All rights reserved.", KTASKMGR, 0, 32, 199, 22, DT_WORDBREAK
+                        PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+        LTEXT           "If DO believe in Jesus Christ as The Son Of God ple"
+                        "ase press this button:", 2001, 2, 10, 123, 11,
+                        DT_WORDBREAK
+                        PRESPARAMS PP_FONTNAMESIZE, "7.Helv"
+        CTEXT           "- To my beloved Grace - ", 2002, 0, 59, 199, 12,
+                        DT_WORDBREAK
+        PUSHBUTTON      "Believers", KABOUTPG_PB_BELIEVERS, 2, 1, 47, 8, BS_AUTOSIZE
+                        PRESPARAMS PP_FONTNAMESIZE, "7.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_ABOUT
+BEGIN
+    DIALOG  "About kTaskMgr", DL_ABOUT, 118, 62, 199, 117,
+    BEGIN
+        CTEXT           TITLE, -1, 0, 90, 199, 14, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "16.Helv"
+        CTEXT           "by knut st. osmundsen", -1, 0, 79, 199, 12,
+                        DT_VCENTER
+        CTEXT           "Copyright (c) 2000 knut st. osmundsen.
+All rights reserved.", KTASKMGR, 0, 32, 199, 22, DT_WORDBREAK
+                        PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+        LTEXT           "If DO believe in Jesus Christ as The Son Of God ple"
+                        "ase press this button:", 2001, 2, 10, 123, 11,
+                        DT_WORDBREAK
+                        PRESPARAMS PP_FONTNAMESIZE, "7.Helv"
+        CTEXT           "- To my beloved Grace - ", 2002, 0, 59, 199, 12,
+                        DT_WORDBREAK
+        PUSHBUTTON      "Believers", KABOUTPG_PB_BELIEVERS, 2, 1, 47, 8, BS_AUTOSIZE
+                        PRESPARAMS PP_FONTNAMESIZE, "7.Helv"
+    END
+END
+
+DLGTEMPLATE DL_KBELIEVER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Believers - A humble wish", DL_KBELIEVER, 87, 99, 245, 100, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        MLE             "", DL_KBELIEVER_MLE, 8, 6, 228, 86, MLS_READONLY | MLS_WORDWRAP |
+                        MLS_VSCROLL | WS_GROUP
+    END
+END
+
+
+DLGTEMPLATE DL_KMODULEDETAILS LOADONCALL FIXED
+BEGIN
+    DIALOG  "hMTE 12f3 - C:\\OS2KRNL", DL_KMODULEDETAILS, 0, -20, 288, 193, FS_MOUSEALIGN,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_NOMOVEWITHOWNER |
+            FCF_CLOSEBUTTON | FCF_HIDEBUTTON | FCF_TASKLIST
+    BEGIN
+        LTEXT           "hMTE:", KMODDTL_TXT_HMTE_LBL, 8, 178, 43, 8
+        LTEXT           "Model:", KMODDTL_TXT_MODEL_LBL, 100, 178, 43, 8
+        LTEXT           "0x1234", KMODDTL_TXT_HMTE, 52, 178, 40, 8
+        LTEXT           "32/16-bit", KMODDTL_TXT_MODEL, 144, 178, 80, 8
+        LTEXT           "Name:", KMODDTL_TXT_NAME_LBL, 8, 168, 43, 8
+        LTEXT           "C:\\OS2KRNL", KMODDTL_TXT_NAME, 52, 168, 228, 8
+        LTEXT           "Objects:", KMODDTL_TXT_COBJECTS_LBL, 8, 158, 43, 8
+        LTEXT           "2", KMODDTL_TXT_COBJECTS, 52, 158, 40, 8
+        CONTAINER       KMODDTL_CNR_OBJECTS, 8, 88, 272, 68, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE,"8.Helv"
+
+        LTEXT           "Imported modules:", KMODDTL_TXT_CIMPMODULES_LBL, 8,
+                        71, 87, 8
+        LTEXT           "2", KMODDTL_TXT_CIMPMODULES, 101, 71, 40, 8
+        CONTAINER       KMODDTL_CNR_IMPMODULES, 8, 6, 272, 64, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE,"8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KPROCESSDETAILS
+BEGIN
+    DIALOG  "Process details", DL_KPROCESSDETAILS, 210, 170, 368, 174, 0,
+                FCF_TITLEBAR
+                | FCF_SYSMENU
+                | FCF_NOMOVEWITHOWNER
+                | FCF_SIZEBORDER
+                | FCF_DLGBORDER
+                | FCF_CLOSEBUTTON
+    BEGIN
+        NOTEBOOK        KPROCDTL_NTBK, 0, 0, 368, 174, WS_VISIBLE | WS_TABSTOP |
+                        BKS_BACKPAGESTR | BKS_ROUNDEDTABS |
+                        BKS_TABTEXTCENTER | BKS_SPIRALBIND |
+                        BKS_TABBEDDIALOG
+        PRESPARAMS PP_FONTNAMESIZE,"8.Helv"
+    END
+END
+
+DLGTEMPLATE DL_KSFNDETAILS
+BEGIN
+    DIALOG  "SFN details", DL_KSFNDETAILS, 210, 170, 368, 174, 0,
+                FCF_TITLEBAR
+                | FCF_SYSMENU
+                | FCF_NOMOVEWITHOWNER
+                | FCF_SIZEBORDER
+                | FCF_DLGBORDER
+                | FCF_CLOSEBUTTON
+    BEGIN
+        NOTEBOOK        KSFNDTL_NTBK, 0, 0, 368, 174, WS_VISIBLE | WS_TABSTOP |
+                        BKS_BACKPAGESTR | BKS_ROUNDEDTABS |
+                        BKS_TABTEXTCENTER | BKS_SPIRALBIND |
+                        BKS_TABBEDDIALOG
+        PRESPARAMS PP_FONTNAMESIZE,"8.Helv"
+    END
+END
+
+
+DLGTEMPLATE DL_KPROCESSDETAILSPAGE
+BEGIN
+    DIALOG  "Details", DL_KPROCESSDETAILSPAGE,
+            0, 0, 350, 214, NOT FS_DLGBORDER | WS_VISIBLE
+        PRESPARAMS PP_FONTNAMESIZE,"10.Helv"
+    BEGIN
+        LTEXT           "Name:", KPROCDTLPG_TXT_NAME_LBL, 8, 200, 56, 8
+        LTEXT           "C:\\OS2\\PMSHELL.EXE", KPROCDTLPG_TXT_NAME, 66,
+                        200, 276, 8
+
+        LTEXT           "Pid:", KPROCDTLPG_TXT_PID_LBL, 8, 190, 56, 8
+        RTEXT           "0x0007", KPROCDTLPG_TXT_PID, 66, 190, 50, 8
+
+        LTEXT           "hMTE:", KPROCDTLPG_TXT_HMTE_LBL, 8, 170, 56, 8
+        RTEXT           "0x0007", KPROCDTLPG_TXT_HMTE, 66, 170, 50, 8
+
+        LTEXT           "Parent Pid:", KPROCDTLPG_TXT_PPID_LBL, 8, 180, 56, 8
+        RTEXT           "0x0007", KPROCDTLPG_TXT_PPID, 66, 180, 50, 8
+
+        LTEXT           "Type:", KPROCDTLPG_TXT_TYPE_LBL, 8, 160, 40, 8
+        LTEXT           "0x0007",KPROCDTLPG_TXT_TYPE, 50, 160, 80, 8
+
+        LTEXT           "Status:", KPROCDTLPG_TXT_STATUS_LBL, 8, 150, 40, 8
+        LTEXT           "hmm", KPROCDTLPG_TXT_STATUS, 50, 150, 80, 8
+
+        LTEXT           "Screengroup Id:", KPROCDTLPG_TXT_SCREENGRPID_LBL, 142, 150, 159, 8
+        RTEXT           "0x000F", KPROCDTLPG_TXT_SCREENGRPID, 302, 150, 40, 8
+
+        LTEXT           "Number of open files:", KPROCDTLPG_TXT_CFILES_LBL, 142, 170, 159, 8
+        RTEXT           "17", KPROCDTLPG_TXT_CFILES, 302, 170, 40, 8
+
+        LTEXT           "Number of shared memory handles:", KPROCDTLPG_TXT_CSHAREDMEM_LBL, 142, 180, 159, 8
+        RTEXT           "20", KPROCDTLPG_TXT_CSHAREDMEM, 302, 180, 40, 8
+
+        LTEXT           "Number of privat 32-bit semaphors:", KPROCDTLPG_TXT_C32SEMAPHORS_LBL, 142, 190, 159, 8
+        RTEXT           "50", KPROCDTLPG_TXT_C32SEMAPHORS, 302, 190, 40, 8
+
+        LTEXT           "Number of DLLs:", KPROCDTLPG_TXT_CDLLS_LBL, 142, 160, 159, 8
+        RTEXT           "50", KPROCDTLPG_TXT_CDLLS, 302, 160, 40, 8
+
+        LTEXT           "Number of threads:", KPROCDTLPG_TXT_CTHREADS_LBL, 8, 136, 128, 8
+        RTEXT           "24", KPROCDTLPG_TXT_CTHREADS, 136, 136, 24, 8
+        CONTAINER       KPROCDTLPG_CNR_THREADS, 8, 78, 334, 56,
+                        CCS_SINGLESEL | CCS_MINIRECORDCORE | WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+
+        LTEXT           "Number of child processes:", KPROCDTLPG_TXT_CCHILDREN_LBL, 8, 62, 128, 8
+        RTEXT           "44", KPROCDTLPG_TXT_CCHILDREN, 136, 62, 24, 8
+        CONTAINER       KPROCDTLPG_CNR_CHILDREN, 8, 8, 334, 52,
+                        CCS_SINGLESEL | CCS_MINIRECORDCORE | WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+DLGTEMPLATE DL_KPROCESS_CHANGE_PRIORITY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Dialog Title", DL_KPROCESS_CHANGE_PRIORITY, 54, 102, 308, 128,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        CONTAINER       KPROCPRTY_CNR_THREADS, 8, 26, 292, 64,
+                        CCS_SINGLESEL | CCS_READONLY | CCS_MINIRECORDCORE
+                        | WS_GROUP
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Priority class:", KPROCPRTY_TXT_CLASS_LBL, 8, 112, 84, 8
+        CONTROL         "", KPROCPRTY_CB_CLASS, 8, 50, 127, 59,
+                        WC_COMBOBOX, CBS_DROPDOWNLIST | WS_GROUP |
+                        WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Priority Delta:", KPROCPRTY_TXT_DELTA_LBL, 165, 112, 68, 8
+        SPINBUTTON      KPROCPRTY_SPB_DELTA, 164, 99, 46, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | SPBS_FASTSPIN | WS_GROUP
+        PUSHBUTTON      "~Ok", DID_OK, 6, 4, 40, 14
+        PUSHBUTTON      "Avbryt", DID_CANCEL, 49, 4, 40, 14
+    END
+END
+

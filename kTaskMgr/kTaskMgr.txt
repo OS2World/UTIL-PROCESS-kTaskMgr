@@ -1,0 +1,28 @@
+                          Upload Information Template for Hobbes.nmsu.edu
+                          ===============================================
+
+        Archive Filename: kTaskMgr003.zip
+       Short Description: kTaskMgr for OS/2 v0.0.3 (alpha/preview)
+        Long Description: kTaskMgr for OS/2 v0.0.3 (alpha/preview)
+                          Process (and system) information/manager.
+
+      Proposed directory
+           for placement: /pub/os2/util/process
+
+               Your name: knut st. osmundsen
+           Email address: knut.stange.osmundsen@mynd.no
+    Program contact name: (same)
+   Program contact email: (same)
+             Program URL: http://kTaskMgr.sourceforge.net/
+
+      Would you like the
+   contact email address
+    included in listings? yes
+
+Operating System/Version: OS/2 warp 4 and above
+ Additional requirements: none
+
+                Replaces: kTaskMgr002.zip
+
+
+

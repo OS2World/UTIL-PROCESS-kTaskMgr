@@ -1,0 +1,163 @@
+/* $Id: kTaskMgr.rc,v 1.9 2000/06/19 20:08:42 stknut Exp $
+ *
+ * The Resource File.
+ *
+ * Copyright (c) 2000 knut st. osmundsen
+ *
+ */
+
+/*******************************************************************************
+*   Defined Constants And Macros                                               *
+*******************************************************************************/
+#define INCL_WININPUT
+
+/*******************************************************************************
+*   Header Files                                                               *
+*******************************************************************************/
+#include <os2.h>
+#include "kTaskMgr_Defs.h"
+
+//ICON     KTASKMGR      "kTaskMgr.ico"
+
+MENU IDM_CNR_MODULE
+BEGIN
+    MENUITEM "~Details...",             IDM_CNR_MOD_DETAILS
+END
+
+MENU IDM_CNR_MODULE_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_MOD_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU  "~Sorting",                IDM_CNR_MOD_ALL_SORT
+    BEGIN
+    END
+END
+
+MENU IDM_CNR_PROCESS
+BEGIN
+    MENUITEM "~Details...",             IDM_CNR_PROC_DETAILS
+    MENUITEM SEPARATOR
+    MENUITEM "Kill",                    IDM_CNR_PROC_KILL
+    MENUITEM "kill -9 ",                IDM_CNR_PROC_KILLXF86
+    MENUITEM SEPARATOR
+    MENUITEM "Change Priority",         IDM_CNR_PROC_PRIORITY, MIS_TEXT, MIA_DISABLED
+END
+
+MENU IDM_CNR_PROCESS_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_PROC_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU  "~Sorting",                IDM_CNR_PROC_ALL_SORT
+    BEGIN
+    END
+END
+
+MENU IDM_CNR_THREAD
+BEGIN
+    /* - not implemented / what are we to implement by the way???
+    MENUITEM "~Details...",             IDM_CNR_TRD_DETAILS
+    */
+END
+
+MENU IDM_CNR_THREAD_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_TRD_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU "~Sorting",                 IDM_CNR_TRD_ALL_SORT
+    BEGIN
+    END
+END
+
+
+MENU IDM_CNR_SFN
+BEGIN
+    MENUITEM "~Details...",             IDM_CNR_SFN_DETAILS
+END
+
+MENU IDM_CNR_SFN_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_SFN_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU "~Sorting",                 IDM_CNR_SFN_ALL_SORT
+    BEGIN
+    END
+END
+
+
+MENU IDM_CNR_QUEUE
+BEGIN
+    MENUITEM "Owner Process Details...",IDM_CNR_QUE_OWNERDETAILS
+END
+
+MENU IDM_CNR_QUEUE_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_QUE_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU "~Sorting",                 IDM_CNR_QUE_ALL_SORT
+    BEGIN
+    END
+END
+
+
+MENU IDM_CNR_QUEUEOPEN
+BEGIN
+    MENUITEM "Process Details...",      IDM_CNR_QUEO_PROCESSDETAILS
+    MENUITEM "Owner Process Details...", IDM_CNR_QUEO_OWNERDETAILS
+END
+
+MENU IDM_CNR_QUEUEOPEN_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_QUEO_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU "~Sorting",                 IDM_CNR_QUEO_ALL_SORT
+    BEGIN
+    END
+END
+
+MENU IDM_CNR_OBJECT_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_OBJ_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU "~Sorting",                 IDM_CNR_OBJ_ALL_SORT
+    BEGIN
+    END
+END
+
+MENU IDM_CNR_PROCESS_DETAILS
+BEGIN
+    MENUITEM "~Parent Details...",      IDM_CNR_OBJ_PROC_DTL_PPID
+    MENUITEM "~Module Details...",      IDM_CNR_OBJ_PROC_DTL_HMTE
+END
+
+
+MENU IDM_CNR_PROCESS_DETAILS_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_OBJ_ALL_REFRESH
+    MENUITEM SEPARATOR
+    MENUITEM "~Parent Details...",      IDM_CNR_OBJ_PROC_DTL_PPID
+    MENUITEM "~Module Details...",      IDM_CNR_OBJ_PROC_DTL_HMTE
+    MENUITEM SEPARATOR
+    SUBMENU "~Sorting",                 IDM_CNR_OBJ_ALL_SORT
+    BEGIN
+    END
+END
+
+
+MENU IDM_CNR_MEMMAP
+BEGIN
+    MENUITEM "~Details...",             IDM_CNR_MMAP_DETAILS, MIA_DISABLED
+END
+
+MENU IDM_CNR_MEMMAP_ALL
+BEGIN
+    MENUITEM "~Refresh",                IDM_CNR_MMAP_ALL_REFRESH
+    MENUITEM SEPARATOR
+    SUBMENU "~Sorting",                 IDM_CNR_MMAP_ALL_SORT
+    BEGIN
+    END
+END
+
+
+
+RCINCLUDE "kTaskMgr.dlg"
+
